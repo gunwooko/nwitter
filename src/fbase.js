@@ -1,4 +1,5 @@
 import * as firebase from "firebase/app";
+import "firebase/auth";
 
 // Your web app's Firebase configuration
 // MUST use REACT_APP_"your environment variable"
