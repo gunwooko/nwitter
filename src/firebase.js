@@ -1,14 +1,17 @@
 import * as firebase from "firebase/app";
 
 // Your web app's Firebase configuration
+// MUST use REACT_APP_"your environment variable"
+// Using process.env is only for GitHub,
+// Anyways when you build the app and you put it on a website, CRA will replace REACT_APP with the real values
 const firebaseConfig = {
-  apiKey: "AIzaSyDO1w433kKFCxZyi6hIXGMcWijfP_tI1TE",
-  authDomain: "nwitter-93c45.firebaseapp.com",
-  databaseURL: "https://nwitter-93c45.firebaseio.com",
-  projectId: "nwitter-93c45",
-  storageBucket: "nwitter-93c45.appspot.com",
-  messagingSenderId: "661533608844",
-  appId: "1:661533608844:web:5669d5f6763acffa9424a9",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase
