@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useHistoy } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { authService } from "fbase";
 
 const Profile = () => {
