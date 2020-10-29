@@ -20,10 +20,20 @@ function App() {
     });
   }, []);
 
+  const refreshUser = () => {
+    // This function is useful when displayName is changed in Profile.js
+    console.log(authService.currentUser.displayName);
+    setUserObj(authService.currentUser);
+  };
+
   return (
     <>
       {init ? (
-        <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
+        <AppRouter
+          isLoggedIn={isLoggedIn}
+          userObj={userObj}
+          refreshUser={refreshUser}
+        />
       ) : (
         "Initializing..."
       )}

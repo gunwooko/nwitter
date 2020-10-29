@@ -78,6 +78,7 @@ const Home = ({ userObj }) => {
       setAttachment(result);
     };
     if (theFile) {
+      // if theFile is not undefined
       reader.readAsDataURL(theFile); // start to read "theFile" asynchronously
     }
     setAttachment("");
