@@ -28,19 +28,20 @@ function App() {
         // setUserObj(user); // => We take all user object and (see refreshUser function)
       } else {
         setIsLoggedIn(false);
+        setUserObj(null);
       }
       setInit(true);
     });
   }, []);
 
-  const refreshUser = () => {
+  const refreshUser = async () => {
     // This function is useful when displayName is changed in Profile.js
 
     // console.log(authService.currentUser);
     // There is a problem that React can not catch the change of profile's display name because authService.currentUser returns a masive object (It's hard to know)
     // There are two ways to resolve this problem:
     // Option 1. Make this object small => choose what we want to use
-    const user = authService.currentUser;
+    const user = await authService.currentUser;
     setUserObj({
       displayName: user.displayName,
       uid: user.uid,

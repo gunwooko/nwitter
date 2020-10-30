@@ -11,13 +11,17 @@ const Profile = ({ userObj, refreshUser }) => {
     history.push("/");
   };
 
-  useEffect(async () => {
-    const nweets = await dbService
-      .collection("nweets")
-      .where("creatorID", "==", userObj.uid)
-      .orderBy("createdAt", "desc") // noSQL => FirebaseError: The query requires an index. => firebase shows us an error how to fix it
-      .get();
-    // console.log(nweets.docs.map((doc) => doc.data()));
+  useEffect(() => {
+    const helpFunction = async () => {
+      // reference => https://www.robinwieruch.de/react-hooks-fetch-data
+      const nweets = await dbService
+        .collection("nweets")
+        .where("creatorID", "==", userObj.uid)
+        .orderBy("createdAt", "desc") // noSQL => FirebaseError: The query requires an index. => firebase shows us an error how to fix it
+        .get();
+      console.log(nweets.docs.map((doc) => doc.data()));
+    };
+    helpFunction();
   });
 
   const onChange = (event) => {
