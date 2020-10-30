@@ -5,7 +5,7 @@ import { authService } from "fbase";
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userObj, setUserObj] = useState(null);
+  const [userObj, setUserObj] = useState({});
 
   useEffect(() => {
     // Response from Firebase is late, so in this hook We can check if it is logged in or not
@@ -28,7 +28,7 @@ function App() {
         // setUserObj(user); // => We take all user object and (see refreshUser function)
       } else {
         setIsLoggedIn(false);
-        setUserObj(null);
+        setUserObj({});
       }
       setInit(true);
     });
