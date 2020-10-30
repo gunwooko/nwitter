@@ -17,7 +17,7 @@ const Profile = ({ userObj, refreshUser }) => {
       .where("creatorID", "==", userObj.uid)
       .orderBy("createdAt", "desc") // noSQL => FirebaseError: The query requires an index. => firebase shows us an error how to fix it
       .get();
-    console.log(nweets.docs.map((doc) => doc.data()));
+    // console.log(nweets.docs.map((doc) => doc.data()));
   });
 
   const onChange = (event) => {
